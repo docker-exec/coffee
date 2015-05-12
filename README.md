@@ -1,12 +1,12 @@
-# Docker Exec Image: CoffeeScript
+# Docker Exec Image: s
 
-A Dockerfile describing an container capable of executing CoffeeScript source files.
+A Dockerfile describing an container capable of executing s source files.
 
 # Build
 
 ```sh
 git clone https://github.com/docker-exec/coffee.git
-docker build -t dexec/coffee .
+docker build -t dexec/lang-coffee .
 ```
 
 # Usage
@@ -16,7 +16,7 @@ In a directory containing a script e.g. foo.coffee, run:
 ```sh
 docker run -t --rm \
     -v $(pwd -P)/foo.coffee:/tmp/dexec/build/foo.coffee \
-    dexec/coffee foo.coffee
+    dexec/lang-coffee foo.coffee
 ```
 
 ## Passing arguments to the script
@@ -34,7 +34,7 @@ Each argument passed must be prefixed in this way, e.g.
 ```sh
 docker run -t --rm \
     -v $(pwd -P)/foo.coffee:/tmp/dexec/build/foo.coffee \
-    dexec/coffee foo.coffee \
+    dexec/lang-coffee foo.coffee \
     --arg='hello world' \
     --arg=foo \
     --arg=bar
